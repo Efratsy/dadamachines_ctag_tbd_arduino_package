@@ -30,12 +30,12 @@ jobs:
         run: |
           cp -r hardware/rp2040/* build/rp2040/
           mkdir -p build/rp2040/libraries
-          cp -r libraries/* build/rp2040/libraries
+          cp -r libraries/* build/rp2040/libraries/
 
       - name: Structure and zip cores for Arduino
         run: |
           cd build
-          mkdir esp32/1.0.0 rp2040/1.0.0
+          mkdir -p esp32/1.0.0 rp2040/1.0.0
           mv esp32/* esp32/1.0.0/
           mv rp2040/* rp2040/1.0.0/
           zip -r esp32-1.0.0.zip esp32
