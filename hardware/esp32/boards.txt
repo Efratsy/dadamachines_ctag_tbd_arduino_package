@@ -1,0 +1,302 @@
+# Official Espressif options
+menu.UploadSpeed=Upload Speed
+menu.USBMode=USB Mode
+menu.CDCOnBoot=USB CDC On Boot
+menu.MSCOnBoot=USB Firmware MSC On Boot
+menu.DFUOnBoot=USB DFU On Boot
+menu.UploadMode=Upload Mode
+menu.CPUFreq=CPU Frequency
+menu.FlashFreq=Flash Frequency
+menu.FlashMode=Flash Mode
+menu.FlashSize=Flash Size
+menu.PartitionScheme=Partition Scheme
+menu.DebugLevel=Core Debug Level
+menu.PSRAM=PSRAM
+menu.LoopCore=Arduino Runs On
+menu.EventsCore=Events Run On
+menu.MemoryType=Memory Type
+menu.EraseFlash=Erase All Flash Before Sketch Upload
+menu.JTAGAdapter=JTAG Adapter
+menu.ZigbeeMode=Zigbee Mode
+menu.PinNumbers=Pin Numbering
+
+# Custom options
+menu.Revision=Board Revision
+menu.LORAWAN_REGION=LoRaWan Region
+menu.LoRaWanDebugLevel=LoRaWan Debug Level
+menu.LORAWAN_DEVEUI=LoRaWan DevEUI
+menu.LORAWAN_PREAMBLE_LENGTH=LoRaWan Preamble Length
+menu.SLOW_CLK_TPYE=Slow Clk Type(only for LoRaWAN)
+menu.einksize=E-Ink Display Size
+menu.NetworkLogLevel=Network Log Level
+##############################################################
+### DO NOT PUT BOARDS ABOVE THE OFFICIAL ESPRESSIF BOARDS! ###
+##############################################################
+
+# Generic definition to be used for USB discovery of CDC/JTAG
+esp32_family.name=ESP32 Audio MCU
+esp32_family.hide=true
+esp32_family.vid.0=0x303a
+esp32_family.pid.0=0x1001
+esp32_family.upload_port.0.vid=0x303a
+esp32_family.upload_port.0.pid=0x1001
+esp32_family.build.board=ESP32_FAMILY
+
+##############################################################
+
+dadamachines_esp32.name=ESP32 Audio MCU
+
+dadamachines_esp32.bootloader.tool=esptool_py
+dadamachines_esp32.bootloader.tool.default=esptool_py
+
+dadamachines_esp32.upload.tool=esptool_py
+dadamachines_esp32.upload.tool.default=esptool_py
+dadamachines_esp32.upload.tool.network=esp_ota
+
+dadamachines_esp32.upload.maximum_size=1310720
+dadamachines_esp32.upload.maximum_data_size=327680
+dadamachines_esp32.upload.flags=
+dadamachines_esp32.upload.extra_flags=
+dadamachines_esp32.upload.use_1200bps_touch=false
+dadamachines_esp32.upload.wait_for_upload_port=false
+
+dadamachines_esp32.serial.disableDTR=false
+dadamachines_esp32.serial.disableRTS=false
+
+dadamachines_esp32.build.tarch=xtensa
+dadamachines_esp32.build.bootloader_addr=0x0
+dadamachines_esp32.build.target=esp32s3
+dadamachines_esp32.build.mcu=esp32s3
+dadamachines_esp32.build.core=esp32
+dadamachines_esp32.build.variant=dadamachines_esp32
+dadamachines_esp32.build.board=ESP32S3_DEV
+
+dadamachines_esp32.build.usb_mode=1
+dadamachines_esp32.build.cdc_on_boot=0
+dadamachines_esp32.build.msc_on_boot=0
+dadamachines_esp32.build.dfu_on_boot=0
+dadamachines_esp32.build.f_cpu=240000000L
+dadamachines_esp32.build.flash_size=4MB
+dadamachines_esp32.build.flash_freq=80m
+dadamachines_esp32.build.flash_mode=dio
+dadamachines_esp32.build.boot=qio
+dadamachines_esp32.build.boot_freq=80m
+dadamachines_esp32.build.partitions=default
+dadamachines_esp32.build.defines=
+dadamachines_esp32.build.loop_core=
+dadamachines_esp32.build.event_core=
+dadamachines_esp32.build.psram_type=qspi
+dadamachines_esp32.build.memory_type={build.boot}_{build.psram_type}
+
+## IDE 2.0 Seems to not update the value
+dadamachines_esp32.menu.JTAGAdapter.default=Disabled
+dadamachines_esp32.menu.JTAGAdapter.default.build.copy_jtag_files=0
+dadamachines_esp32.menu.JTAGAdapter.builtin=Integrated USB JTAG
+dadamachines_esp32.menu.JTAGAdapter.builtin.build.openocdscript=dadamachines_esp32-builtin.cfg
+dadamachines_esp32.menu.JTAGAdapter.builtin.build.copy_jtag_files=1
+dadamachines_esp32.menu.JTAGAdapter.external=FTDI Adapter
+dadamachines_esp32.menu.JTAGAdapter.external.build.openocdscript=esp32s3-ftdi.cfg
+dadamachines_esp32.menu.JTAGAdapter.external.build.copy_jtag_files=1
+dadamachines_esp32.menu.JTAGAdapter.bridge=ESP USB Bridge
+dadamachines_esp32.menu.JTAGAdapter.bridge.build.openocdscript=esp32s3-bridge.cfg
+dadamachines_esp32.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
+
+dadamachines_esp32.menu.PSRAM.disabled=Disabled
+dadamachines_esp32.menu.PSRAM.disabled.build.defines=
+dadamachines_esp32.menu.PSRAM.disabled.build.psram_type=qspi
+dadamachines_esp32.menu.PSRAM.enabled=QSPI PSRAM
+dadamachines_esp32.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
+dadamachines_esp32.menu.PSRAM.enabled.build.psram_type=qspi
+dadamachines_esp32.menu.PSRAM.opi=OPI PSRAM
+dadamachines_esp32.menu.PSRAM.opi.build.defines=-DBOARD_HAS_PSRAM
+dadamachines_esp32.menu.PSRAM.opi.build.psram_type=opi
+
+dadamachines_esp32.menu.FlashMode.qio=QIO 80MHz
+dadamachines_esp32.menu.FlashMode.qio.build.flash_mode=dio
+dadamachines_esp32.menu.FlashMode.qio.build.boot=qio
+dadamachines_esp32.menu.FlashMode.qio.build.boot_freq=80m
+dadamachines_esp32.menu.FlashMode.qio.build.flash_freq=80m
+dadamachines_esp32.menu.FlashMode.qio120=QIO 120MHz
+dadamachines_esp32.menu.FlashMode.qio120.build.flash_mode=dio
+dadamachines_esp32.menu.FlashMode.qio120.build.boot=qio
+dadamachines_esp32.menu.FlashMode.qio120.build.boot_freq=120m
+dadamachines_esp32.menu.FlashMode.qio120.build.flash_freq=80m
+dadamachines_esp32.menu.FlashMode.dio=DIO 80MHz
+dadamachines_esp32.menu.FlashMode.dio.build.flash_mode=dio
+dadamachines_esp32.menu.FlashMode.dio.build.boot=dio
+dadamachines_esp32.menu.FlashMode.dio.build.boot_freq=80m
+dadamachines_esp32.menu.FlashMode.dio.build.flash_freq=80m
+dadamachines_esp32.menu.FlashMode.opi=OPI 80MHz
+dadamachines_esp32.menu.FlashMode.opi.build.flash_mode=dout
+dadamachines_esp32.menu.FlashMode.opi.build.boot=opi
+dadamachines_esp32.menu.FlashMode.opi.build.boot_freq=80m
+dadamachines_esp32.menu.FlashMode.opi.build.flash_freq=80m
+
+dadamachines_esp32.menu.FlashSize.4M=4MB (32Mb)
+dadamachines_esp32.menu.FlashSize.4M.build.flash_size=4MB
+dadamachines_esp32.menu.FlashSize.8M=8MB (64Mb)
+dadamachines_esp32.menu.FlashSize.8M.build.flash_size=8MB
+dadamachines_esp32.menu.FlashSize.16M=16MB (128Mb)
+dadamachines_esp32.menu.FlashSize.16M.build.flash_size=16MB
+dadamachines_esp32.menu.FlashSize.32M=32MB (256Mb)
+dadamachines_esp32.menu.FlashSize.32M.build.flash_size=32MB
+
+dadamachines_esp32.menu.LoopCore.1=Core 1
+dadamachines_esp32.menu.LoopCore.1.build.loop_core=-DARDUINO_RUNNING_CORE=1
+dadamachines_esp32.menu.LoopCore.0=Core 0
+dadamachines_esp32.menu.LoopCore.0.build.loop_core=-DARDUINO_RUNNING_CORE=0
+
+dadamachines_esp32.menu.EventsCore.1=Core 1
+dadamachines_esp32.menu.EventsCore.1.build.event_core=-DARDUINO_EVENT_RUNNING_CORE=1
+dadamachines_esp32.menu.EventsCore.0=Core 0
+dadamachines_esp32.menu.EventsCore.0.build.event_core=-DARDUINO_EVENT_RUNNING_CORE=0
+
+dadamachines_esp32.menu.USBMode.hwcdc=Hardware CDC and JTAG
+dadamachines_esp32.menu.USBMode.hwcdc.build.usb_mode=1
+dadamachines_esp32.menu.USBMode.default=USB-OTG (TinyUSB)
+dadamachines_esp32.menu.USBMode.default.build.usb_mode=0
+
+dadamachines_esp32.menu.CDCOnBoot.default=Disabled
+dadamachines_esp32.menu.CDCOnBoot.default.build.cdc_on_boot=0
+dadamachines_esp32.menu.CDCOnBoot.cdc=Enabled
+dadamachines_esp32.menu.CDCOnBoot.cdc.build.cdc_on_boot=1
+
+dadamachines_esp32.menu.MSCOnBoot.default=Disabled
+dadamachines_esp32.menu.MSCOnBoot.default.build.msc_on_boot=0
+dadamachines_esp32.menu.MSCOnBoot.msc=Enabled (Requires USB-OTG Mode)
+dadamachines_esp32.menu.MSCOnBoot.msc.build.msc_on_boot=1
+
+dadamachines_esp32.menu.DFUOnBoot.default=Disabled
+dadamachines_esp32.menu.DFUOnBoot.default.build.dfu_on_boot=0
+dadamachines_esp32.menu.DFUOnBoot.dfu=Enabled (Requires USB-OTG Mode)
+dadamachines_esp32.menu.DFUOnBoot.dfu.build.dfu_on_boot=1
+
+dadamachines_esp32.menu.UploadMode.default=UART0 / Hardware CDC
+dadamachines_esp32.menu.UploadMode.default.upload.use_1200bps_touch=false
+dadamachines_esp32.menu.UploadMode.default.upload.wait_for_upload_port=false
+dadamachines_esp32.menu.UploadMode.cdc=USB-OTG CDC (TinyUSB)
+dadamachines_esp32.menu.UploadMode.cdc.upload.use_1200bps_touch=true
+dadamachines_esp32.menu.UploadMode.cdc.upload.wait_for_upload_port=true
+
+dadamachines_esp32.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.default.build.partitions=default
+dadamachines_esp32.menu.PartitionScheme.defaultffat=Default 4MB with ffat (1.2MB APP/1.5MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.defaultffat.build.partitions=default_ffat
+dadamachines_esp32.menu.PartitionScheme.default_8MB=8M with spiffs (3MB APP/1.5MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.default_8MB.build.partitions=default_8MB
+dadamachines_esp32.menu.PartitionScheme.default_8MB.upload.maximum_size=3342336
+dadamachines_esp32.menu.PartitionScheme.minimal=Minimal (1.3MB APP/700KB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.minimal.build.partitions=minimal
+dadamachines_esp32.menu.PartitionScheme.no_fs=No FS 4MB (2MB APP x2)
+dadamachines_esp32.menu.PartitionScheme.no_fs.build.partitions=no_fs
+dadamachines_esp32.menu.PartitionScheme.no_fs.upload.maximum_size=2031616
+dadamachines_esp32.menu.PartitionScheme.no_ota=No OTA (2MB APP/2MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.no_ota.build.partitions=no_ota
+dadamachines_esp32.menu.PartitionScheme.no_ota.upload.maximum_size=2097152
+dadamachines_esp32.menu.PartitionScheme.noota_3g=No OTA (1MB APP/3MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.noota_3g.build.partitions=noota_3g
+dadamachines_esp32.menu.PartitionScheme.noota_3g.upload.maximum_size=1048576
+dadamachines_esp32.menu.PartitionScheme.noota_ffat=No OTA (2MB APP/2MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.noota_ffat.build.partitions=noota_ffat
+dadamachines_esp32.menu.PartitionScheme.noota_ffat.upload.maximum_size=2097152
+dadamachines_esp32.menu.PartitionScheme.noota_3gffat=No OTA (1MB APP/3MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.noota_3gffat.build.partitions=noota_3gffat
+dadamachines_esp32.menu.PartitionScheme.noota_3gffat.upload.maximum_size=1048576
+dadamachines_esp32.menu.PartitionScheme.huge_app=Huge APP (3MB No OTA/1MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.huge_app.build.partitions=huge_app
+dadamachines_esp32.menu.PartitionScheme.huge_app.upload.maximum_size=3145728
+dadamachines_esp32.menu.PartitionScheme.min_spiffs=Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.min_spiffs.build.partitions=min_spiffs
+dadamachines_esp32.menu.PartitionScheme.min_spiffs.upload.maximum_size=1966080
+dadamachines_esp32.menu.PartitionScheme.fatflash=16M Flash (2MB APP/12.5MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.fatflash.build.partitions=ffat
+dadamachines_esp32.menu.PartitionScheme.fatflash.upload.maximum_size=2097152
+dadamachines_esp32.menu.PartitionScheme.app3M_fat9M_16MB=16M Flash (3MB APP/9.9MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.app3M_fat9M_16MB.build.partitions=app3M_fat9M_16MB
+dadamachines_esp32.menu.PartitionScheme.app3M_fat9M_16MB.upload.maximum_size=3145728
+dadamachines_esp32.menu.PartitionScheme.rainmaker=RainMaker 4MB
+dadamachines_esp32.menu.PartitionScheme.rainmaker.build.partitions=rainmaker
+dadamachines_esp32.menu.PartitionScheme.rainmaker.upload.maximum_size=1966080
+dadamachines_esp32.menu.PartitionScheme.rainmaker_4MB=RainMaker 4MB No OTA
+dadamachines_esp32.menu.PartitionScheme.rainmaker_4MB.build.partitions=rainmaker_4MB_no_ota
+dadamachines_esp32.menu.PartitionScheme.rainmaker_4MB.upload.maximum_size=4038656
+dadamachines_esp32.menu.PartitionScheme.rainmaker_8MB=RainMaker 8MB
+dadamachines_esp32.menu.PartitionScheme.rainmaker_8MB.build.partitions=rainmaker_8MB
+dadamachines_esp32.menu.PartitionScheme.rainmaker_8MB.upload.maximum_size=4116480
+dadamachines_esp32.menu.PartitionScheme.app5M_fat24M_32MB=32M Flash (4.8MB APP/22MB FATFS)
+dadamachines_esp32.menu.PartitionScheme.app5M_fat24M_32MB.build.partitions=large_fat_32MB
+dadamachines_esp32.menu.PartitionScheme.app5M_fat24M_32MB.upload.maximum_size=4718592
+dadamachines_esp32.menu.PartitionScheme.app5M_little24M_32MB=32M Flash (4.8MB APP/22MB LittleFS)
+dadamachines_esp32.menu.PartitionScheme.app5M_little24M_32MB.build.partitions=large_littlefs_32MB
+dadamachines_esp32.menu.PartitionScheme.app5M_little24M_32MB.upload.maximum_size=4718592
+dadamachines_esp32.menu.PartitionScheme.app13M_data7M_32MB=32M Flash (13MB APP/6.75MB SPIFFS)
+dadamachines_esp32.menu.PartitionScheme.app13M_data7M_32MB.build.partitions=default_32MB
+dadamachines_esp32.menu.PartitionScheme.app13M_data7M_32MB.upload.maximum_size=13107200
+dadamachines_esp32.menu.PartitionScheme.esp_sr_16=ESP SR 16M (3MB APP/7MB SPIFFS/2.9MB MODEL)
+dadamachines_esp32.menu.PartitionScheme.esp_sr_16.upload.maximum_size=3145728
+dadamachines_esp32.menu.PartitionScheme.esp_sr_16.upload.extra_flags=0xD10000 {build.path}/srmodels.bin
+dadamachines_esp32.menu.PartitionScheme.esp_sr_16.build.partitions=esp_sr_16
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr=Zigbee ZCZR 4MB with spiffs
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr.build.partitions=zigbee_zczr
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr.upload.maximum_size=1310720
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr_8MB=Zigbee ZCZR 8MB with spiffs
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr_8MB.build.partitions=zigbee_zczr_8MB
+dadamachines_esp32.menu.PartitionScheme.zigbee_zczr_8MB.upload.maximum_size=3407872
+dadamachines_esp32.menu.PartitionScheme.custom=Custom
+dadamachines_esp32.menu.PartitionScheme.custom.build.partitions=
+dadamachines_esp32.menu.PartitionScheme.custom.upload.maximum_size=16777216
+
+dadamachines_esp32.menu.CPUFreq.240=240MHz (WiFi)
+dadamachines_esp32.menu.CPUFreq.240.build.f_cpu=240000000L
+dadamachines_esp32.menu.CPUFreq.160=160MHz (WiFi)
+dadamachines_esp32.menu.CPUFreq.160.build.f_cpu=160000000L
+dadamachines_esp32.menu.CPUFreq.80=80MHz (WiFi)
+dadamachines_esp32.menu.CPUFreq.80.build.f_cpu=80000000L
+dadamachines_esp32.menu.CPUFreq.40=40MHz
+dadamachines_esp32.menu.CPUFreq.40.build.f_cpu=40000000L
+dadamachines_esp32.menu.CPUFreq.20=20MHz
+dadamachines_esp32.menu.CPUFreq.20.build.f_cpu=20000000L
+dadamachines_esp32.menu.CPUFreq.10=10MHz
+dadamachines_esp32.menu.CPUFreq.10.build.f_cpu=10000000L
+
+dadamachines_esp32.menu.UploadSpeed.921600=921600
+dadamachines_esp32.menu.UploadSpeed.921600.upload.speed=921600
+dadamachines_esp32.menu.UploadSpeed.115200=115200
+dadamachines_esp32.menu.UploadSpeed.115200.upload.speed=115200
+dadamachines_esp32.menu.UploadSpeed.256000.windows=256000
+dadamachines_esp32.menu.UploadSpeed.256000.upload.speed=256000
+dadamachines_esp32.menu.UploadSpeed.230400.windows.upload.speed=256000
+dadamachines_esp32.menu.UploadSpeed.230400=230400
+dadamachines_esp32.menu.UploadSpeed.230400.upload.speed=230400
+dadamachines_esp32.menu.UploadSpeed.460800.linux=460800
+dadamachines_esp32.menu.UploadSpeed.460800.macosx=460800
+dadamachines_esp32.menu.UploadSpeed.460800.upload.speed=460800
+dadamachines_esp32.menu.UploadSpeed.512000.windows=512000
+dadamachines_esp32.menu.UploadSpeed.512000.upload.speed=512000
+
+dadamachines_esp32.menu.DebugLevel.none=None
+dadamachines_esp32.menu.DebugLevel.none.build.code_debug=0
+dadamachines_esp32.menu.DebugLevel.error=Error
+dadamachines_esp32.menu.DebugLevel.error.build.code_debug=1
+dadamachines_esp32.menu.DebugLevel.warn=Warn
+dadamachines_esp32.menu.DebugLevel.warn.build.code_debug=2
+dadamachines_esp32.menu.DebugLevel.info=Info
+dadamachines_esp32.menu.DebugLevel.info.build.code_debug=3
+dadamachines_esp32.menu.DebugLevel.debug=Debug
+dadamachines_esp32.menu.DebugLevel.debug.build.code_debug=4
+dadamachines_esp32.menu.DebugLevel.verbose=Verbose
+dadamachines_esp32.menu.DebugLevel.verbose.build.code_debug=5
+
+dadamachines_esp32.menu.EraseFlash.none=Disabled
+dadamachines_esp32.menu.EraseFlash.none.upload.erase_cmd=
+dadamachines_esp32.menu.EraseFlash.all=Enabled
+dadamachines_esp32.menu.EraseFlash.all.upload.erase_cmd=-e
+
+dadamachines_esp32.menu.ZigbeeMode.default=Disabled
+dadamachines_esp32.menu.ZigbeeMode.default.build.zigbee_mode=
+dadamachines_esp32.menu.ZigbeeMode.default.build.zigbee_libs=
+dadamachines_esp32.menu.ZigbeeMode.zczr=Zigbee ZCZR (coordinator/router)
+dadamachines_esp32.menu.ZigbeeMode.zczr.build.zigbee_mode=-DZIGBEE_MODE_ZCZR
+dadamachines_esp32.menu.ZigbeeMode.zczr.build.zigbee_libs=-lesp_zb_api.zczr -lzboss_stack.zczr -lzboss_port.remote
+
+##############################################################

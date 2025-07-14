@@ -1,0 +1,62 @@
+# Doxygen configuration for CTAG TBD Arduino Package
+PROJECT_NAME           = "dadamachines CTAG TBD"
+PROJECT_BRIEF          = "Arduino hardware package and libraries for CTAG TBD"
+OUTPUT_DIRECTORY       = docs/api
+CREATE_SUBDIRS         = NO
+
+# Input
+INPUT = \
+  libraries/ \
+  hardware/esp32/variants/dadamachines_esp32/ \
+  hardware/rp2040/variants/dadamachines_rp2040/ \
+  docs/MAINPAGE.md
+  
+RECURSIVE              = YES
+FILE_PATTERNS 		   = *.h *.cpp *.ino
+
+EXTENSION_MAPPING = ino=c
+
+# Extract docs from source
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_ANON_NSPACES   = YES
+
+# Output formats
+GENERATE_HTML          = YES
+HTML_OUTPUT            = .
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+
+# Markdown support
+MARKDOWN_SUPPORT       = YES
+USE_MDFILE_AS_MAINPAGE = docs/MAINPAGE.md
+
+# GitHub Pages compatibility
+HTML_EXTRA_STYLESHEET  =
+HTML_TIMESTAMP         = NO
+GENERATE_TREEVIEW      = YES
+
+# Source code browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = NO
+
+# Warnings
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Language & Encoding
+OUTPUT_LANGUAGE        = English
+INPUT_ENCODING         = UTF-8
+
+# Project logo
+# PROJECT_LOGO         = docs/logo.png
+
+# Enable grouping
+ENABLE_GROUPING       = YES
+SHOW_USED_FILES       = YES
+SORT_MEMBER_DOCS      = YES
+SORT_BRIEF_DOCS       = YES

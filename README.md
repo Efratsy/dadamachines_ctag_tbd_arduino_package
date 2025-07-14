@@ -1,40 +1,86 @@
-# dadamachines CTAG TBD Arduino Hardware Package
+# dadamachines CTAG TBD – Arduino Hardware Package & Libraries
 
-This repository contains the official Arduino hardware package for the **dadamachines CTAG TBD** platform. It provides the necessary board definitions, core libraries, and tools to program CTAG TBD devices using the Arduino IDE and other compatible environments.
+This repository contains the official Arduino **hardware package** and **core libraries** for the [CTAG TBD platform](https://github.com/ctag-fh-kiel/ctag-tbd), developed and maintained by [dadamachines](https://www.dadamachines.com).
 
-## Core Foundations & Credits
+It enables easy development for CTAG TBD devices using the Arduino IDE or other compatible environments.
 
-This package integrates and builds upon the incredible work of existing open-source projects. We extend our sincere gratitude to their developers and contributors.
+---
 
-* This package is the official Arduino implementation for the **[CTAG TBD project by ctag-fh-kiel](https://github.com/ctag-fh-kiel/ctag-tbd)**.
-* **RP2040 Support**: Our RP2040 implementation is built upon the powerful and feature-rich **[`arduino-pico` core by Earle F. Philhower, III](https.github.com/earlephilhower/arduino-pico)**.
-* **ESP32 Support**: Our ESP32 implementation is based on the official **[`arduino-esp32` core by Espressif Systems](https://github.com/espressif/arduino-esp32)**.
+## 📦 Hardware Support
 
-## Installation
+This package provides official board definitions, tools, and build support for the following platforms:
 
-To install this hardware package via the Arduino IDE, please follow these steps:
+- **RP2040**: Based on [`arduino-pico`](https://github.com/earlephilhower/arduino-pico) by Earle F. Philhower, III  
+- **ESP32**: Based on the official [`arduino-esp32`](https://github.com/espressif/arduino-esp32) core by Espressif Systems
 
-1.  Open the Arduino IDE (version 1.8.x or newer).
-2.  Go to `File` > `Preferences`.
-3.  In the "Additional Board Manager URLs" field, add the following URL:
+All components are integrated under the unified `dadamachines CTAG TBD` platform.
+
+---
+
+## 🚀 Installation via Arduino IDE
+
+1. Open the Arduino IDE (version 1.8.x or newer).
+2. Go to `File` > `Preferences`.
+3. In the **"Additional Board Manager URLs"** field, add:
     ```
     # TO-DO LINK einfügen
     ```
-4.  Go to `Tools` > `Board` > `Boards Manager...`.
-5.  Search for `dadamachines`.
-6.  Click the "Install" button to install the package.
-7.  Restart the Arduino IDE.
+4. Go to `Tools` > `Board` > `Boards Manager...`.
+5. Search for **dadamachines**.
+6. Click **Install**.
+7. After installation, select your board via `Tools > Board > dadamachines CTAG TBD`.
 
-## Usage
+---
 
-After installation, you can select the target board from the `Tools > Board` menu. The CTAG TBD devices will be listed under the "dadamachines CTAG TBD" category.
+## 📚 Included Libraries
 
-## License
+These official libraries are bundled with the hardware package and tightly integrated with CTAG TBD devices:
 
-This project is the official Arduino implementation for the CTAG TBD platform and is therefore licensed accordingly.
+| Library               | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| `CTAG_Audio`          | High-level API for audio I/O, codecs, and DSP control                       |
+| `CTAG_Button`         | Easy-to-use button debouncing and input reading                             |
+| `CTAG_Display`        | OLED display support, including text, shapes, and UI rendering              |
+| `CTAG_ExtensionBoard` | Communication with optional extension boards                                |
+| `CTAG_LED`            | LED control including brightness and animation patterns                     |
+| `CTAG_TRSMIDI`        | Handling of TRS-MIDI input and output via dedicated hardware UART           |
+| `CTAG_USBMIDI`        | USB MIDI host and device support, including real-time MIDI event handling   |
+| `CTAG_SPI_IPC`        | Inter-process communication via SPI between multiple MCUs                   |
 
-* **Software**: In accordance with its foundation on the CTAG TBD project, this entire Arduino package is licensed under the **GNU General Public License (GPL), Version 3.0**. The full license text is available [here](https://www.gnu.org/licenses/gpl-3.0.html).
 
-* **Hardware**: Any hardware designs related to this project follow the original CTAG TBD hardware license: **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+These libraries are automatically available when using this hardware package in the Arduino IDE.
 
-* **Dependencies**: This project incorporates libraries from the `arduino-pico` and `arduino-esp32` cores, which are distributed under the LGPL v2.1. Under the terms of the GPL, the combined work is governed by the GPL 3.0.
+---
+
+## 🔧 Manual Library Use (Advanced)
+
+If needed for development purposes, you can clone this repository and copy the `libraries/` folder manually into your Arduino sketchbook’s `libraries/` directory.
+
+---
+
+## 🙏 Acknowledgements
+
+This package is built upon the incredible work of the following open-source projects:
+
+- [CTAG TBD hardware and firmware](https://github.com/ctag-fh-kiel/ctag-tbd)
+- [arduino-pico](https://github.com/earlephilhower/arduino-pico) by Earle F. Philhower, III
+- [arduino-esp32](https://github.com/espressif/arduino-esp32) by Espressif Systems
+
+We thank all contributors to these projects.
+
+---
+
+## 📜 License
+
+**Software:**  
+This Arduino package is licensed under the **GNU General Public License v3.0 (GPLv3)**.  
+See: [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
+
+**Hardware:**  
+All hardware design files related to CTAG TBD are licensed under  
+**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+
+**Dependencies:**  
+Bundled libraries from `arduino-pico` and `arduino-esp32` fall under LGPL v2.1 and are compatible with the GPLv3 license of this package.
+
+---
