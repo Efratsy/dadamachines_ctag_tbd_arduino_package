@@ -1,0 +1,56 @@
+name: Build and Release Arduino Hardware Package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up directories
+        run: |
+          mkdir -p build/esp32 build/rp2040
+
+      - name: Copy esp32 core and libraries
+        run: |
+          cp -r hardware/esp32/1.0.0/* build/esp32/
+          cp -r libraries build/esp32/libraries
+
+      - name: Copy rp2040 core and libraries
+        run: |
+          cp -r hardware/rp2040/1.0.0/* build/rp2040/
+          cp -r libraries build/rp2040/libraries
+
+      - name: Zip cores
+        run: |
+          cd build
+          zip -r esp32-1.0.0.zip esp32
+          zip -r rp2040-1.0.0.zip rp2040
+
+      - name: Calculate SHA256
+        run: |
+          cd build
+          sha256sum esp32-1.0.0.zip > esp32.sha256
+          sha256sum rp2040-1.0.0.zip > rp2040.sha256
+
+      - name: Upload release artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: |
+            build/esp32-1.0.0.zip
+            build/esp32.sha256
+            build/rp2040-1.0.0.zip
+            build/rp2040.sha256
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
