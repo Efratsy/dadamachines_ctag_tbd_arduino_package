@@ -35,9 +35,12 @@ jobs:
       - name: Structure and zip cores for Arduino
         run: |
           cd build
-          mkdir -p esp32/1.0.0 rp2040/1.0.0
-          mv esp32/* esp32/1.0.0/
-          mv rp2040/* rp2040/1.0.0/
+          mv esp32 esp32_tmp
+          mkdir -p esp32/1.0.0
+          mv esp32_tmp/* esp32/1.0.0/
+          mv rp2040 rp2040_tmp
+          mkdir -p rp2040/1.0.0
+          mv rp2040_tmp/* rp2040/1.0.0/
           zip -r esp32-1.0.0.zip esp32
           zip -r rp2040-1.0.0.zip rp2040
 
