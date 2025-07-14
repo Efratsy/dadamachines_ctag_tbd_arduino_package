@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "dadamachines CTAG TBD ESP32",
+          "name": "dadamachines CTAG TBD",
           "architecture": "esp32",
           "version": "1.0.0",
           "category": "Contributed",
@@ -24,7 +24,7 @@
           "toolsDependencies": []
         },
         {
-          "name": "dadamachines CTAG TBD RP2040",
+          "name": "dadamachines CTAG TBD",
           "architecture": "rp2040",
           "version": "1.0.0",
           "category": "Contributed",
