@@ -1,4 +1,4 @@
-name: Build and Release Arduino Hardware Package
+name: Build & Release CTAG TBD Arduino Package
 
 on:
   push:
@@ -22,12 +22,12 @@ jobs:
 
       - name: Copy esp32 core and libraries
         run: |
-          cp -r hardware/esp32/1.0.0/* build/esp32/
+          cp -r hardware/esp32/* build/esp32/
           cp -r libraries build/esp32/libraries
 
       - name: Copy rp2040 core and libraries
         run: |
-          cp -r hardware/rp2040/1.0.0/* build/rp2040/
+          cp -r hardware/rp2040/* build/rp2040/
           cp -r libraries build/rp2040/libraries
 
       - name: Zip cores
