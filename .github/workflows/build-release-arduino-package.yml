@@ -35,11 +35,11 @@ jobs:
       - name: Structure and zip cores for Arduino
         run: |
           cd build
-          mkdir esp32_zip rp2040_zip
-          mv esp32 esp32_zip/1.0.0
-          mv rp2040 rp2040_zip/1.0.0
-          zip -r esp32-1.0.0.zip esp32_zip
-          zip -r rp2040-1.0.0.zip rp2040_zip
+          mkdir esp32/1.0.0 rp2040/1.0.0
+          mv esp32/* esp32/1.0.0/
+          mv rp2040/* rp2040/1.0.0/
+          zip -r esp32-1.0.0.zip esp32
+          zip -r rp2040-1.0.0.zip rp2040
 
       - name: Calculate SHA256
         run: |
