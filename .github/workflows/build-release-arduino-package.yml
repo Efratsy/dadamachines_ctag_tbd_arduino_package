@@ -51,8 +51,10 @@ jobs:
       - name: Calculate file sizes and prepare JSON
         run: |
           # Dateigrößen berechnen
-          echo "ESP32_SIZE=$(stat -c%s build/esp32-1.0.0.zip)" >> $GITHUB_ENV
-          echo "RP2040_SIZE=$(stat -c%s build/rp2040-1.0.0.zip)" >> $GITHUB_ENV
+          ESP32_SIZE=$(wc -c < build/esp32-1.0.0.zip | tr -d ' ')
+          RP2040_SIZE=$(wc -c < build/rp2040-1.0.0.zip | tr -d ' ')
+          echo "ESP32_SIZE=$ESP32_SIZE" >> $GITHUB_ENV
+          echo "RP2040_SIZE=$RP2040_SIZE" >> $GITHUB_ENV
 
           # SHA256 berechnen
           RP2040_SHA=$(sha256sum build/rp2040-1.0.0.zip | awk '{ print $1 }')
