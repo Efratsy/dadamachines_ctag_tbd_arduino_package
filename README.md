@@ -23,7 +23,7 @@ All components are integrated under the unified `dadamachines CTAG TBD` platform
 2. Go to `File` > `Preferences`.
 3. In the **"Additional Board Manager URLs"** field, add:
     ```
-    # TO-DO LINK einfügen
+    https://efratsy.github.io/dadamachines_ctag_tbd_arduino_package/package_dadamachines_ctag_tbd_index.json
     ```
 4. Go to `Tools` > `Board` > `Boards Manager...`.
 5. Search for **dadamachines**.
