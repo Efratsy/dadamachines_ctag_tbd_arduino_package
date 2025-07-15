@@ -1,6 +1,6 @@
 /**
  * @file Complete_IO_Test.ino
- * @brief A comprehensive I/O test sketch for the CTAG_MIDI library.
+ * @brief A comprehensive I/O test sketch for the CTAG_TRSMIDI library.
  *
  * @defgroup Examples_TRSMIDI Complete_IO_Test
  * @ingroup Examples
@@ -11,12 +11,12 @@
  * For a full test, connect the MIDI OUT to the MIDI IN of your device.
  */
 
-#include "CTAG_MIDI.h"
+#include "CTAG_TRSMIDI.h"
 
 /**
- * @brief Global instance of our MIDI library.
+ * @brief Global instance of our TRSMIDI library.
  */
-CTAG_MIDI midi;
+CTAG_TRSMIDI midi;
 
 /**
  * @brief Variables for the automatic message sending test.
@@ -32,7 +32,7 @@ int sendState = 0;             // The current state of the sending cycle.
 
 /** @brief Callback for Note On messages. */
 void handleNoteOn(byte channel, byte note, byte velocity) {
-  String noteName = CTAG_MIDI::getNoteName(note);
+  String noteName = CTAG_TRSMIDI::getNoteName(note);
   Serial.print("<- IN: Note On\t(Channel: ");
   Serial.print(channel);
   Serial.print(", Note: ");
@@ -44,7 +44,7 @@ void handleNoteOn(byte channel, byte note, byte velocity) {
 
 /** @brief Callback for Note Off messages. */
 void handleNoteOff(byte channel, byte note, byte velocity) {
-  String noteName = CTAG_MIDI::getNoteName(note);
+  String noteName = CTAG_TRSMIDI::getNoteName(note);
   Serial.print("<- IN: Note Off\t(Channel: ");
   Serial.print(channel);
   Serial.print(", Note: ");
@@ -94,7 +94,7 @@ void handlePitchBend(byte channel, int value) {
 void setup() {
   Serial.begin(115200);
   while (!Serial) { delay(10); }
-  Serial.println("\n--- CTAG_MIDI v1.0 Complete I/O Test ---");
+  Serial.println("\n--- CTAG_TRSMIDI v1.0 Complete I/O Test ---");
   Serial.println("Connect MIDI OUT to MIDI IN for a full loopback test.");
 
   // Start the hardware serial port for MIDI communication (e.g., on RP2040 IO8/IO9).
