@@ -16,7 +16,7 @@
           "category": "Contributed",
           "url": "https://github.com/Efratsy/dadamachines_ctag_tbd_arduino_package/releases/download/main/esp32-1.0.0.zip",
           "archiveFileName": "esp32-1.0.0.zip",
-          "checksum": "SHA-256:fcfc860c89e9a4ba44668dd6241c64ab2c91cea2cc37812e915e08b9422a34bd",
+          "checksum": "SHA-256:5c13d7a670ffd909450bf3452b1b19efaa69ea07f40b3b609a2bac86f3e45a1f",
           "size": "19548646",
           "boards": [
             { "name": "CTAG TBD ESP32 Audio MCU" }
@@ -30,8 +30,8 @@
           "category": "Contributed",
           "url": "https://github.com/Efratsy/dadamachines_ctag_tbd_arduino_package/releases/download/main/rp2040-1.0.0.zip",
           "archiveFileName": "rp2040-1.0.0.zip",
-          "checksum": "SHA-256:1582afb47ad64bd356123639f14bd0184e8da5ad8c6c05776eeb0217cc850e33",
-          "size": "152488986",
+          "checksum": "SHA-256:d68d27148b4ebfc1743406b2cd081d95507ff18f2679394c3a2549d23b856fdf",
+          "size": "152489000",
           "boards": [
             { "name": "CTAG TBD RP2040 UI MCU" }
           ],
