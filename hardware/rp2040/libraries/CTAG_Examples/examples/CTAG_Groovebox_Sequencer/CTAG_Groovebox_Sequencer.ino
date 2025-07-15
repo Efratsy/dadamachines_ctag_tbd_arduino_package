@@ -49,7 +49,9 @@ void setup() {
 
   // Initialize the low-level USB Host stack
   USBHost.begin(0);
-
+	
+  Serial2.begin(31250);
+	
   // Initialize MIDI libraries
   trsMidi.begin(Serial2);
   usbMidi.begin();
