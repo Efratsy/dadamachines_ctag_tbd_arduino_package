@@ -1,12 +1,12 @@
 # dadamachines CTAG TBD – Arduino Hardware Package & Libraries
 
-This repository contains the official Arduino **hardware package** and **core libraries** for the [CTAG TBD platform](https://github.com/ctag-fh-kiel/ctag-tbd), developed and maintained by [dadamachines](https://www.dadamachines.com).
+This repository contains the Arduino **hardware package** and **core libraries** for the [CTAG TBD platform](https://github.com/ctag-fh-kiel/ctag-tbd).
 
 It enables easy development for CTAG TBD devices using the Arduino IDE or other compatible environments.
 
 ---
 
-## 📦 Hardware Support
+## Hardware Support
 
 This package provides official board definitions, tools, and build support for the following platforms:
 
@@ -17,7 +17,7 @@ All components are integrated under the unified `dadamachines CTAG TBD` platform
 
 ---
 
-## 🚀 Installation via Arduino IDE
+## Installation via Arduino IDE
 
 1. Open the Arduino IDE (version 1.8.x or newer).
 2. Go to `File` > `Preferences`.
@@ -32,7 +32,7 @@ All components are integrated under the unified `dadamachines CTAG TBD` platform
 
 ---
 
-## 📚 Included Libraries
+## Included Libraries
 
 These official libraries are bundled with the hardware package and tightly integrated with CTAG TBD devices:
 
@@ -52,13 +52,13 @@ These libraries are automatically available when using this hardware package in 
 
 ---
 
-## 🔧 Manual Library Use (Advanced)
+## Manual Library Use (Advanced)
 
 If needed for development purposes, you can clone this repository and copy the `libraries/` folder manually into your Arduino sketchbook’s `libraries/` directory.
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 This package is built upon the incredible work of the following open-source projects:
 
@@ -70,7 +70,21 @@ We thank all contributors to these projects.
 
 ---
 
-## 📜 License
+##  Documentation & Resources
+
+For more detailed usage instructions, example projects, and developer guides, please refer to the official documentation:
+
+- **Wiki** – Getting started, hardware guides, example walkthroughs:  
+  [https://github.com/efratsy/dadamachines_ctag_tbd_arduino_package/wiki](https://github.com/efratsy/dadamachines_ctag_tbd_arduino_package/wiki)
+
+- **API Reference** – Full documentation of all bundled libraries (Doxygen):  
+  [https://efratsy.github.io/dadamachines_ctag_tbd_arduino_package/api](https://efratsy.github.io/dadamachines_ctag_tbd_arduino_package/api/index.html)
+
+If you're new to the platform, we recommend starting with the [Getting Started](https://github.com/efratsy/dadamachines_ctag_tbd_arduino_package/wiki/Getting-Started) guide in the Wiki.
+
+---
+
+## License
 
 **Software:**  
 This Arduino package is licensed under the **GNU General Public License v3.0 (GPLv3)**.  
