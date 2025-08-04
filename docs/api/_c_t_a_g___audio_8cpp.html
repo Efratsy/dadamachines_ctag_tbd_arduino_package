@@ -117,8 +117,6 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:aef24191d7d337cb0e08e96ae2fe80e16" id="r_aef24191d7d337cb0e08e96ae2fe80e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef24191d7d337cb0e08e96ae2fe80e16">BITS_PER_SAMPLE</a>&#160;&#160;&#160;(I2S_BITS_PER_SAMPLE_16BIT)</td></tr>
 <tr class="separator:aef24191d7d337cb0e08e96ae2fe80e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b76a0c2859cfd819a343a780070ee2b" id="r_a4b76a0c2859cfd819a343a780070ee2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b76a0c2859cfd819a343a780070ee2b">SAMPLE_RATE</a>&#160;&#160;&#160;(44100)</td></tr>
-<tr class="separator:a4b76a0c2859cfd819a343a780070ee2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -129,9 +127,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a85654a2eb910948134fedec31ef91e19" id="r_a85654a2eb910948134fedec31ef91e19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_t_a_g___audio_engine.html#a85654a2eb910948134fedec31ef91e19">CTAG_AudioEngine::begin</a> ()</td></tr>
 <tr class="memdesc:a85654a2eb910948134fedec31ef91e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocking call that never returns: streams audio forever on the calling task/thread.  <br /></td></tr>
 <tr class="separator:a85654a2eb910948134fedec31ef91e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbd58aff3726149edab45b7825e2eed4" id="r_abbd58aff3726149edab45b7825e2eed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_t_a_g___audio_engine.html#abbd58aff3726149edab45b7825e2eed4">CTAG_AudioEngine::init</a> (i2s_port_t i2s_port=I2S_NUM_0)</td></tr>
-<tr class="memdesc:abbd58aff3726149edab45b7825e2eed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the codec + I²S peripheral. Must be called once before starting the audio loop.  <br /></td></tr>
-<tr class="separator:abbd58aff3726149edab45b7825e2eed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2959f1ab779145701181311c3431313" id="r_af2959f1ab779145701181311c3431313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_t_a_g___audio_engine.html#af2959f1ab779145701181311c3431313">CTAG_AudioEngine::init</a> (i2s_port_t i2s_port=I2S_NUM_0, uint32_t sample_rate=44100)</td></tr>
+<tr class="memdesc:af2959f1ab779145701181311c3431313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the codec + I²S peripheral. Must be called once before starting the audio loop.  <br /></td></tr>
+<tr class="separator:af2959f1ab779145701181311c3431313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5540b2587aa0f11e31b3fceb872a42ec" id="r_a5540b2587aa0f11e31b3fceb872a42ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_t_a_g___audio_engine.html#a5540b2587aa0f11e31b3fceb872a42ec">CTAG_AudioEngine::renderBlock</a> ()</td></tr>
 <tr class="separator:a5540b2587aa0f11e31b3fceb872a42ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1520860faaef776f5a82496f9613b071" id="r_a1520860faaef776f5a82496f9613b071"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_t_a_g___audio_engine.html#a1520860faaef776f5a82496f9613b071">CTAG_AudioEngine::setSource</a> (<a class="el" href="class_c_t_a_g___audio_source.html">CTAG_AudioSource</a> *source)</td></tr>
@@ -164,22 +162,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00013">13</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4b76a0c2859cfd819a343a780070ee2b" name="a4b76a0c2859cfd819a343a780070ee2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b76a0c2859cfd819a343a780070ee2b">&#9670;&#160;</a></span>SAMPLE_RATE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SAMPLE_RATE&#160;&#160;&#160;(44100)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00012">12</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
 
 </div>
 </div>

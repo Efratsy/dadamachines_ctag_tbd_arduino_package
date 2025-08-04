@@ -163,7 +163,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>A basic 2-operator FM synthesizer voice. </p>
 <p>Knob assignments: 1) Carrier Frequency (Hz) 2) Amplitude (0.0 – 1.0) 3) Modulator Frequency (Hz) 4) Modulation Index (depth) </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00305">305</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00312">312</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac038418cf83761f1c95795a475f71274" name="ac038418cf83761f1c95795a475f71274"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac038418cf83761f1c95795a475f71274">&#9670;&#160;</a></span>CTAG_FMSynth()</h2>
@@ -188,28 +188,28 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00315">315</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  316</span>    : <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>(sampleRate),</div>
-<div class="line"><span class="lineno">  317</span>      <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>(440.0f), <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>(0.5f),</div>
-<div class="line"><span class="lineno">  318</span>       <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>(220.0f), <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>(0.0f), </div>
-<div class="line"><span class="lineno">  319</span>      <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a>(0.0f), <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a>(0.0f)</div>
-<div class="line"><span class="lineno">  320</span>{</div>
-<div class="line"><span class="lineno">  321</span>    <a class="code hl_function" href="#a1b0418ec7d99c6fe994c4cf8b8d9651f">setCarrierFreq</a>(<a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>);</div>
-<div class="line"><span class="lineno">  322</span>    <a class="code hl_function" href="#a7fa940e655c1868ffd0130410004e43c">setAmplitude</a>(<a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>);</div>
-<div class="line"><span class="lineno">  323</span>    <a class="code hl_function" href="#a8ee8a0105c9ffa81bb8e7d15e1c8bbc2">setModFreq</a>(<a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>);</div>
-<div class="line"><span class="lineno">  324</span>    <a class="code hl_function" href="#a5cbf4c28b27ab7fa8be322a8c65cd750">setModIndex</a>(<a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>);</div>
-<div class="line"><span class="lineno">  325</span>}</div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a01d8b4426cf88fb77fd51b415d5725f1"><div class="ttname"><a href="#a01d8b4426cf88fb77fd51b415d5725f1">CTAG_FMSynth::_modFreq</a></div><div class="ttdeci">float _modFreq</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00347">CTAG_Audio.h:347</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a1b0418ec7d99c6fe994c4cf8b8d9651f"><div class="ttname"><a href="#a1b0418ec7d99c6fe994c4cf8b8d9651f">CTAG_FMSynth::setCarrierFreq</a></div><div class="ttdeci">void setCarrierFreq(float freq)</div><div class="ttdoc">Sets the carrier oscillator’s frequency.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00327">CTAG_Audio.cpp:327</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a5cbf4c28b27ab7fa8be322a8c65cd750"><div class="ttname"><a href="#a5cbf4c28b27ab7fa8be322a8c65cd750">CTAG_FMSynth::setModIndex</a></div><div class="ttdeci">void setModIndex(float index)</div><div class="ttdoc">Sets the modulation index (depth of frequency modulation).</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00337">CTAG_Audio.cpp:337</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a5e63566b754bc96ac9b5dbf1452700bd"><div class="ttname"><a href="#a5e63566b754bc96ac9b5dbf1452700bd">CTAG_FMSynth::_amplitude</a></div><div class="ttdeci">float _amplitude</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00349">CTAG_Audio.h:349</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a64bccb09c295f41443a69e40cb58143e"><div class="ttname"><a href="#a64bccb09c295f41443a69e40cb58143e">CTAG_FMSynth::_sampleRate</a></div><div class="ttdeci">float _sampleRate</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00344">CTAG_Audio.h:344</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a6b605d08435b796d0f9182f678531dc6"><div class="ttname"><a href="#a6b605d08435b796d0f9182f678531dc6">CTAG_FMSynth::_modPhase</a></div><div class="ttdeci">float _modPhase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00352">CTAG_Audio.h:352</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a7fa940e655c1868ffd0130410004e43c"><div class="ttname"><a href="#a7fa940e655c1868ffd0130410004e43c">CTAG_FMSynth::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amp)</div><div class="ttdoc">Sets the overall output amplitude.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00341">CTAG_Audio.cpp:341</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a8ee8a0105c9ffa81bb8e7d15e1c8bbc2"><div class="ttname"><a href="#a8ee8a0105c9ffa81bb8e7d15e1c8bbc2">CTAG_FMSynth::setModFreq</a></div><div class="ttdeci">void setModFreq(float freq)</div><div class="ttdoc">Sets the modulator oscillator’s frequency.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00332">CTAG_Audio.cpp:332</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aa29713e57c37bacee4207b6f19cfbae9"><div class="ttname"><a href="#aa29713e57c37bacee4207b6f19cfbae9">CTAG_FMSynth::_modIndex</a></div><div class="ttdeci">float _modIndex</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00348">CTAG_Audio.h:348</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aa5ac446c7ba752cb3c2bc61f123028e6"><div class="ttname"><a href="#aa5ac446c7ba752cb3c2bc61f123028e6">CTAG_FMSynth::_carrierPhase</a></div><div class="ttdeci">float _carrierPhase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00351">CTAG_Audio.h:351</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_abe5d61828b6aff2167295dd1253d5511"><div class="ttname"><a href="#abe5d61828b6aff2167295dd1253d5511">CTAG_FMSynth::_carrierFreq</a></div><div class="ttdeci">float _carrierFreq</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00346">CTAG_Audio.h:346</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00340">340</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  341</span>    : <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>(sampleRate),</div>
+<div class="line"><span class="lineno">  342</span>      <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>(440.0f), <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>(0.5f),</div>
+<div class="line"><span class="lineno">  343</span>       <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>(220.0f), <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>(0.0f), </div>
+<div class="line"><span class="lineno">  344</span>      <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a>(0.0f), <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a>(0.0f)</div>
+<div class="line"><span class="lineno">  345</span>{</div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_function" href="#a1b0418ec7d99c6fe994c4cf8b8d9651f">setCarrierFreq</a>(<a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>);</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_function" href="#a7fa940e655c1868ffd0130410004e43c">setAmplitude</a>(<a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>);</div>
+<div class="line"><span class="lineno">  348</span>    <a class="code hl_function" href="#a8ee8a0105c9ffa81bb8e7d15e1c8bbc2">setModFreq</a>(<a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>);</div>
+<div class="line"><span class="lineno">  349</span>    <a class="code hl_function" href="#a5cbf4c28b27ab7fa8be322a8c65cd750">setModIndex</a>(<a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>);</div>
+<div class="line"><span class="lineno">  350</span>}</div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a01d8b4426cf88fb77fd51b415d5725f1"><div class="ttname"><a href="#a01d8b4426cf88fb77fd51b415d5725f1">CTAG_FMSynth::_modFreq</a></div><div class="ttdeci">float _modFreq</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00354">CTAG_Audio.h:354</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a1b0418ec7d99c6fe994c4cf8b8d9651f"><div class="ttname"><a href="#a1b0418ec7d99c6fe994c4cf8b8d9651f">CTAG_FMSynth::setCarrierFreq</a></div><div class="ttdeci">void setCarrierFreq(float freq)</div><div class="ttdoc">Sets the carrier oscillator’s frequency.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00352">CTAG_Audio.cpp:352</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a5cbf4c28b27ab7fa8be322a8c65cd750"><div class="ttname"><a href="#a5cbf4c28b27ab7fa8be322a8c65cd750">CTAG_FMSynth::setModIndex</a></div><div class="ttdeci">void setModIndex(float index)</div><div class="ttdoc">Sets the modulation index (depth of frequency modulation).</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00362">CTAG_Audio.cpp:362</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a5e63566b754bc96ac9b5dbf1452700bd"><div class="ttname"><a href="#a5e63566b754bc96ac9b5dbf1452700bd">CTAG_FMSynth::_amplitude</a></div><div class="ttdeci">float _amplitude</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00356">CTAG_Audio.h:356</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a64bccb09c295f41443a69e40cb58143e"><div class="ttname"><a href="#a64bccb09c295f41443a69e40cb58143e">CTAG_FMSynth::_sampleRate</a></div><div class="ttdeci">float _sampleRate</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00351">CTAG_Audio.h:351</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a6b605d08435b796d0f9182f678531dc6"><div class="ttname"><a href="#a6b605d08435b796d0f9182f678531dc6">CTAG_FMSynth::_modPhase</a></div><div class="ttdeci">float _modPhase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00359">CTAG_Audio.h:359</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a7fa940e655c1868ffd0130410004e43c"><div class="ttname"><a href="#a7fa940e655c1868ffd0130410004e43c">CTAG_FMSynth::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amp)</div><div class="ttdoc">Sets the overall output amplitude.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00366">CTAG_Audio.cpp:366</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a8ee8a0105c9ffa81bb8e7d15e1c8bbc2"><div class="ttname"><a href="#a8ee8a0105c9ffa81bb8e7d15e1c8bbc2">CTAG_FMSynth::setModFreq</a></div><div class="ttdeci">void setModFreq(float freq)</div><div class="ttdoc">Sets the modulator oscillator’s frequency.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00357">CTAG_Audio.cpp:357</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aa29713e57c37bacee4207b6f19cfbae9"><div class="ttname"><a href="#aa29713e57c37bacee4207b6f19cfbae9">CTAG_FMSynth::_modIndex</a></div><div class="ttdeci">float _modIndex</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00355">CTAG_Audio.h:355</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aa5ac446c7ba752cb3c2bc61f123028e6"><div class="ttname"><a href="#aa5ac446c7ba752cb3c2bc61f123028e6">CTAG_FMSynth::_carrierPhase</a></div><div class="ttdeci">float _carrierPhase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00358">CTAG_Audio.h:358</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_abe5d61828b6aff2167295dd1253d5511"><div class="ttname"><a href="#abe5d61828b6aff2167295dd1253d5511">CTAG_FMSynth::_carrierFreq</a></div><div class="ttdeci">float _carrierFreq</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00353">CTAG_Audio.h:353</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,22 +242,22 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_t_a_g___audio_source.html#acbf29930be42d936a7517810b8bbd770">CTAG_AudioSource</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00345">345</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  345</span>                                    {</div>
-<div class="line"><span class="lineno">  346</span>    <span class="comment">// advance modulator</span></div>
-<div class="line"><span class="lineno">  347</span>    <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> += <a class="code hl_variable" href="#a27f06ca766171259267bb883332e7a97">_modInc</a>;</div>
-<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> &gt;= 2.0f * M_PI) <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> -= 2.0f * M_PI;</div>
-<div class="line"><span class="lineno">  349</span>    <span class="keywordtype">float</span> mod = sin(<a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a>) * <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>;</div>
-<div class="line"><span class="lineno">  350</span> </div>
-<div class="line"><span class="lineno">  351</span>    <span class="comment">// advance carrier, including FM</span></div>
-<div class="line"><span class="lineno">  352</span>    <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> += <a class="code hl_variable" href="#aba9d98013ee955a0a4a9f90602214d52">_carrierInc</a> + mod;</div>
-<div class="line"><span class="lineno">  353</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> &gt;= 2.0f * M_PI) <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> -= 2.0f * M_PI;</div>
-<div class="line"><span class="lineno">  354</span> </div>
-<div class="line"><span class="lineno">  355</span>    <span class="keywordtype">float</span> out = sin(<a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a>) * <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>;</div>
-<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">return</span> (int16_t)(out * 32767.0f);</div>
-<div class="line"><span class="lineno">  357</span>}</div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a27f06ca766171259267bb883332e7a97"><div class="ttname"><a href="#a27f06ca766171259267bb883332e7a97">CTAG_FMSynth::_modInc</a></div><div class="ttdeci">float _modInc</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00355">CTAG_Audio.h:355</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aba9d98013ee955a0a4a9f90602214d52"><div class="ttname"><a href="#aba9d98013ee955a0a4a9f90602214d52">CTAG_FMSynth::_carrierInc</a></div><div class="ttdeci">float _carrierInc</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00354">CTAG_Audio.h:354</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00370">370</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  370</span>                                    {</div>
+<div class="line"><span class="lineno">  371</span>    <span class="comment">// advance modulator</span></div>
+<div class="line"><span class="lineno">  372</span>    <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> += <a class="code hl_variable" href="#a27f06ca766171259267bb883332e7a97">_modInc</a>;</div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> &gt;= 2.0f * M_PI) <a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a> -= 2.0f * M_PI;</div>
+<div class="line"><span class="lineno">  374</span>    <span class="keywordtype">float</span> mod = sin(<a class="code hl_variable" href="#a6b605d08435b796d0f9182f678531dc6">_modPhase</a>) * <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a>;</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>    <span class="comment">// advance carrier, including FM</span></div>
+<div class="line"><span class="lineno">  377</span>    <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> += <a class="code hl_variable" href="#aba9d98013ee955a0a4a9f90602214d52">_carrierInc</a> + mod;</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> &gt;= 2.0f * M_PI) <a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a> -= 2.0f * M_PI;</div>
+<div class="line"><span class="lineno">  379</span> </div>
+<div class="line"><span class="lineno">  380</span>    <span class="keywordtype">float</span> out = sin(<a class="code hl_variable" href="#aa5ac446c7ba752cb3c2bc61f123028e6">_carrierPhase</a>) * <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a>;</div>
+<div class="line"><span class="lineno">  381</span>    <span class="keywordflow">return</span> (int16_t)(out * 32767.0f);</div>
+<div class="line"><span class="lineno">  382</span>}</div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_a27f06ca766171259267bb883332e7a97"><div class="ttname"><a href="#a27f06ca766171259267bb883332e7a97">CTAG_FMSynth::_modInc</a></div><div class="ttdeci">float _modInc</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00362">CTAG_Audio.h:362</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___f_m_synth_html_aba9d98013ee955a0a4a9f90602214d52"><div class="ttname"><a href="#aba9d98013ee955a0a4a9f90602214d52">CTAG_FMSynth::_carrierInc</a></div><div class="ttdeci">float _carrierInc</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00361">CTAG_Audio.h:361</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,10 +284,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00341">341</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  341</span>                                         {</div>
-<div class="line"><span class="lineno">  342</span>    <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a> = constrain(amp, 0.0f, 1.0f);</div>
-<div class="line"><span class="lineno">  343</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00366">366</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  366</span>                                         {</div>
+<div class="line"><span class="lineno">  367</span>    <a class="code hl_variable" href="#a5e63566b754bc96ac9b5dbf1452700bd">_amplitude</a> = constrain(amp, 0.0f, 1.0f);</div>
+<div class="line"><span class="lineno">  368</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,11 +314,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00327">327</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  327</span>                                            {</div>
-<div class="line"><span class="lineno">  328</span>    <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a> = freq;</div>
-<div class="line"><span class="lineno">  329</span>    <a class="code hl_variable" href="#aba9d98013ee955a0a4a9f90602214d52">_carrierInc</a>  = (2.0f * M_PI * <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>) / <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>;</div>
-<div class="line"><span class="lineno">  330</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00352">352</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>                                            {</div>
+<div class="line"><span class="lineno">  353</span>    <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a> = freq;</div>
+<div class="line"><span class="lineno">  354</span>    <a class="code hl_variable" href="#aba9d98013ee955a0a4a9f90602214d52">_carrierInc</a>  = (2.0f * M_PI * <a class="code hl_variable" href="#abe5d61828b6aff2167295dd1253d5511">_carrierFreq</a>) / <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>;</div>
+<div class="line"><span class="lineno">  355</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -345,11 +345,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00332">332</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  332</span>                                        {</div>
-<div class="line"><span class="lineno">  333</span>    <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a> = freq;</div>
-<div class="line"><span class="lineno">  334</span>    <a class="code hl_variable" href="#a27f06ca766171259267bb883332e7a97">_modInc</a>  = (2.0f * M_PI * <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>) / <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>;</div>
-<div class="line"><span class="lineno">  335</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00357">357</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  357</span>                                        {</div>
+<div class="line"><span class="lineno">  358</span>    <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a> = freq;</div>
+<div class="line"><span class="lineno">  359</span>    <a class="code hl_variable" href="#a27f06ca766171259267bb883332e7a97">_modInc</a>  = (2.0f * M_PI * <a class="code hl_variable" href="#a01d8b4426cf88fb77fd51b415d5725f1">_modFreq</a>) / <a class="code hl_variable" href="#a64bccb09c295f41443a69e40cb58143e">_sampleRate</a>;</div>
+<div class="line"><span class="lineno">  360</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -376,10 +376,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00337">337</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  337</span>                                          {</div>
-<div class="line"><span class="lineno">  338</span>    <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a> = index;</div>
-<div class="line"><span class="lineno">  339</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00362">362</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>                                          {</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_variable" href="#aa29713e57c37bacee4207b6f19cfbae9">_modIndex</a> = index;</div>
+<div class="line"><span class="lineno">  364</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,7 +404,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00349">349</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00356">356</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +428,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00346">346</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00353">353</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -452,7 +452,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00354">354</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00361">361</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +476,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00351">351</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00358">358</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -500,7 +500,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00347">347</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00354">354</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -524,7 +524,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00355">355</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00362">362</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -548,7 +548,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00348">348</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00355">355</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00352">352</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00359">359</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -596,7 +596,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00344">344</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00351">351</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>

@@ -155,7 +155,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>A simple sawtooth-wave oscillator (VCO) with skew control. </p>
 <p>Knob assignments: 1) Frequency (Hz) 2) Amplitude (0.0 – 1.0) 3) Skew (0.01 – 0.99) : position of the waveform’s peak within each cycle 4) (unused / reserved for future) </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00251">251</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00258">258</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae16b78cef33daa5a2abff4eced592b8a" name="ae16b78cef33daa5a2abff4eced592b8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae16b78cef33daa5a2abff4eced592b8a">&#9670;&#160;</a></span>CTAG_VCO_Saw()</h2>
@@ -180,27 +180,27 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00259">259</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  260</span>    : <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>(sampleRate)</div>
-<div class="line"><span class="lineno">  261</span>    , <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>(440.0f)</div>
-<div class="line"><span class="lineno">  262</span>    , <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>(0.5f)</div>
-<div class="line"><span class="lineno">  263</span>    , <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a>(0.0f)</div>
-<div class="line"><span class="lineno">  264</span>    , <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a>((2.0f * M_PI * <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>) / <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>)</div>
-<div class="line"><span class="lineno">  265</span>    , <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>(0.5f)</div>
-<div class="line"><span class="lineno">  266</span>{</div>
-<div class="line"><span class="lineno">  267</span>    <a class="code hl_function" href="#ad34b35b1fcfe6c79cbbd0c4faff9bd88">setFrequency</a>(<a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>);</div>
-<div class="line"><span class="lineno">  268</span>    <a class="code hl_function" href="#a4314ec71d03a880925fa39b4e4c67ac7">setAmplitude</a>(<a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>);</div>
-<div class="line"><span class="lineno">  269</span>    <a class="code hl_function" href="#a27e45cc3247041d89cce5a8702d0d1ad">setSkew</a>(<a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>);</div>
-<div class="line"><span class="lineno">  270</span>}</div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a06da8f356ff81e876cd5b926ae7878dd"><div class="ttname"><a href="#a06da8f356ff81e876cd5b926ae7878dd">CTAG_VCO_Saw::_phase</a></div><div class="ttdeci">float _phase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00287">CTAG_Audio.h:287</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a27e45cc3247041d89cce5a8702d0d1ad"><div class="ttname"><a href="#a27e45cc3247041d89cce5a8702d0d1ad">CTAG_VCO_Saw::setSkew</a></div><div class="ttdeci">void setSkew(float skew)</div><div class="ttdoc">Sets the skew (waveform symmetry) of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00281">CTAG_Audio.cpp:281</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a4314ec71d03a880925fa39b4e4c67ac7"><div class="ttname"><a href="#a4314ec71d03a880925fa39b4e4c67ac7">CTAG_VCO_Saw::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amp)</div><div class="ttdoc">Sets the amplitude (volume) of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00277">CTAG_Audio.cpp:277</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a7a48e7e40857fd11fd887c4d958a3fb1"><div class="ttname"><a href="#a7a48e7e40857fd11fd887c4d958a3fb1">CTAG_VCO_Saw::_amplitude</a></div><div class="ttdeci">float _amplitude</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00286">CTAG_Audio.h:286</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_aaef01e29e7202e7d303e03431fb978b2"><div class="ttname"><a href="#aaef01e29e7202e7d303e03431fb978b2">CTAG_VCO_Saw::_phaseIncrement</a></div><div class="ttdeci">float _phaseIncrement</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00288">CTAG_Audio.h:288</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad34b35b1fcfe6c79cbbd0c4faff9bd88"><div class="ttname"><a href="#ad34b35b1fcfe6c79cbbd0c4faff9bd88">CTAG_VCO_Saw::setFrequency</a></div><div class="ttdeci">void setFrequency(float freq)</div><div class="ttdoc">Sets the frequency of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00272">CTAG_Audio.cpp:272</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad4e6ef3f59e9c6ddc4c7d3f32c7a429d"><div class="ttname"><a href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">CTAG_VCO_Saw::_frequency</a></div><div class="ttdeci">float _frequency</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00285">CTAG_Audio.h:285</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad5b32dfff3825fb2c90de970b63579c8"><div class="ttname"><a href="#ad5b32dfff3825fb2c90de970b63579c8">CTAG_VCO_Saw::_skew</a></div><div class="ttdeci">float _skew</div><div class="ttdoc">Position of the peak in the cycle [0.01…0.99].</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00291">CTAG_Audio.h:291</a></div></div>
-<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_aed4de421e73eb581f8380cd48aa67f65"><div class="ttname"><a href="#aed4de421e73eb581f8380cd48aa67f65">CTAG_VCO_Saw::_sampleRate</a></div><div class="ttdeci">float _sampleRate</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00284">CTAG_Audio.h:284</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00284">284</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  285</span>    : <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>(sampleRate)</div>
+<div class="line"><span class="lineno">  286</span>    , <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>(440.0f)</div>
+<div class="line"><span class="lineno">  287</span>    , <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>(0.5f)</div>
+<div class="line"><span class="lineno">  288</span>    , <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a>(0.0f)</div>
+<div class="line"><span class="lineno">  289</span>    , <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a>((2.0f * M_PI * <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>) / <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>)</div>
+<div class="line"><span class="lineno">  290</span>    , <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>(0.5f)</div>
+<div class="line"><span class="lineno">  291</span>{</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_function" href="#ad34b35b1fcfe6c79cbbd0c4faff9bd88">setFrequency</a>(<a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>);</div>
+<div class="line"><span class="lineno">  293</span>    <a class="code hl_function" href="#a4314ec71d03a880925fa39b4e4c67ac7">setAmplitude</a>(<a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>);</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_function" href="#a27e45cc3247041d89cce5a8702d0d1ad">setSkew</a>(<a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>);</div>
+<div class="line"><span class="lineno">  295</span>}</div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a06da8f356ff81e876cd5b926ae7878dd"><div class="ttname"><a href="#a06da8f356ff81e876cd5b926ae7878dd">CTAG_VCO_Saw::_phase</a></div><div class="ttdeci">float _phase</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00294">CTAG_Audio.h:294</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a27e45cc3247041d89cce5a8702d0d1ad"><div class="ttname"><a href="#a27e45cc3247041d89cce5a8702d0d1ad">CTAG_VCO_Saw::setSkew</a></div><div class="ttdeci">void setSkew(float skew)</div><div class="ttdoc">Sets the skew (waveform symmetry) of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00306">CTAG_Audio.cpp:306</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a4314ec71d03a880925fa39b4e4c67ac7"><div class="ttname"><a href="#a4314ec71d03a880925fa39b4e4c67ac7">CTAG_VCO_Saw::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amp)</div><div class="ttdoc">Sets the amplitude (volume) of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00302">CTAG_Audio.cpp:302</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_a7a48e7e40857fd11fd887c4d958a3fb1"><div class="ttname"><a href="#a7a48e7e40857fd11fd887c4d958a3fb1">CTAG_VCO_Saw::_amplitude</a></div><div class="ttdeci">float _amplitude</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00293">CTAG_Audio.h:293</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_aaef01e29e7202e7d303e03431fb978b2"><div class="ttname"><a href="#aaef01e29e7202e7d303e03431fb978b2">CTAG_VCO_Saw::_phaseIncrement</a></div><div class="ttdeci">float _phaseIncrement</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00295">CTAG_Audio.h:295</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad34b35b1fcfe6c79cbbd0c4faff9bd88"><div class="ttname"><a href="#ad34b35b1fcfe6c79cbbd0c4faff9bd88">CTAG_VCO_Saw::setFrequency</a></div><div class="ttdeci">void setFrequency(float freq)</div><div class="ttdoc">Sets the frequency of the oscillator.</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8cpp_source.html#l00297">CTAG_Audio.cpp:297</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad4e6ef3f59e9c6ddc4c7d3f32c7a429d"><div class="ttname"><a href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">CTAG_VCO_Saw::_frequency</a></div><div class="ttdeci">float _frequency</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00292">CTAG_Audio.h:292</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_ad5b32dfff3825fb2c90de970b63579c8"><div class="ttname"><a href="#ad5b32dfff3825fb2c90de970b63579c8">CTAG_VCO_Saw::_skew</a></div><div class="ttdeci">float _skew</div><div class="ttdoc">Position of the peak in the cycle [0.01…0.99].</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00298">CTAG_Audio.h:298</a></div></div>
+<div class="ttc" id="aclass_c_t_a_g___v_c_o___saw_html_aed4de421e73eb581f8380cd48aa67f65"><div class="ttname"><a href="#aed4de421e73eb581f8380cd48aa67f65">CTAG_VCO_Saw::_sampleRate</a></div><div class="ttdeci">float _sampleRate</div><div class="ttdef"><b>Definition</b> <a href="_c_t_a_g___audio_8h_source.html#l00291">CTAG_Audio.h:291</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -233,31 +233,31 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_t_a_g___audio_source.html#acbf29930be42d936a7517810b8bbd770">CTAG_AudioSource</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00286">286</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  286</span>                                    {</div>
-<div class="line"><span class="lineno">  287</span>    <span class="comment">// Advance phase</span></div>
-<div class="line"><span class="lineno">  288</span>    <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> += <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a>;</div>
-<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> &gt;= 2.0f * M_PI) {</div>
-<div class="line"><span class="lineno">  290</span>        <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> -= 2.0f * M_PI;</div>
-<div class="line"><span class="lineno">  291</span>    }</div>
-<div class="line"><span class="lineno">  292</span> </div>
-<div class="line"><span class="lineno">  293</span>    <span class="comment">// Normalize phase into [0…1)</span></div>
-<div class="line"><span class="lineno">  294</span>    <span class="keywordtype">float</span> norm = <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> / (2.0f * M_PI);</div>
-<div class="line"><span class="lineno">  295</span>    <span class="keywordtype">float</span> out;</div>
-<div class="line"><span class="lineno">  296</span> </div>
-<div class="line"><span class="lineno">  297</span>    <span class="comment">// Rising ramp until skew, then falling ramp</span></div>
-<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">if</span> (norm &lt; <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) {</div>
-<div class="line"><span class="lineno">  299</span>        out = -1.0f + (norm / <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) * 2.0f;</div>
-<div class="line"><span class="lineno">  300</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  301</span>        out =  1.0f - ((norm - <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) / (1.0f - <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>)) * 2.0f;</div>
-<div class="line"><span class="lineno">  302</span>    }</div>
-<div class="line"><span class="lineno">  303</span> </div>
-<div class="line"><span class="lineno">  304</span>    <span class="comment">// Apply amplitude</span></div>
-<div class="line"><span class="lineno">  305</span>    out *= <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>;</div>
-<div class="line"><span class="lineno">  306</span> </div>
-<div class="line"><span class="lineno">  307</span>    <span class="comment">// Convert to 16-bit</span></div>
-<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">return</span> (int16_t)(out * 32767.0f);</div>
-<div class="line"><span class="lineno">  309</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00311">311</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>                                    {</div>
+<div class="line"><span class="lineno">  312</span>    <span class="comment">// Advance phase</span></div>
+<div class="line"><span class="lineno">  313</span>    <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> += <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a>;</div>
+<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> &gt;= 2.0f * M_PI) {</div>
+<div class="line"><span class="lineno">  315</span>        <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> -= 2.0f * M_PI;</div>
+<div class="line"><span class="lineno">  316</span>    }</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <span class="comment">// Normalize phase into [0…1)</span></div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordtype">float</span> norm = <a class="code hl_variable" href="#a06da8f356ff81e876cd5b926ae7878dd">_phase</a> / (2.0f * M_PI);</div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordtype">float</span> out;</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <span class="comment">// Rising ramp until skew, then falling ramp</span></div>
+<div class="line"><span class="lineno">  323</span>    <span class="keywordflow">if</span> (norm &lt; <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) {</div>
+<div class="line"><span class="lineno">  324</span>        out = -1.0f + (norm / <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) * 2.0f;</div>
+<div class="line"><span class="lineno">  325</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  326</span>        out =  1.0f - ((norm - <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>) / (1.0f - <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a>)) * 2.0f;</div>
+<div class="line"><span class="lineno">  327</span>    }</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <span class="comment">// Apply amplitude</span></div>
+<div class="line"><span class="lineno">  330</span>    out *= <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a>;</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    <span class="comment">// Convert to 16-bit</span></div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">return</span> (int16_t)(out * 32767.0f);</div>
+<div class="line"><span class="lineno">  334</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,10 +284,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00277">277</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  277</span>                                         {</div>
-<div class="line"><span class="lineno">  278</span>    <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a> = constrain(amp, 0.0f, 1.0f);</div>
-<div class="line"><span class="lineno">  279</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00302">302</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>                                         {</div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_variable" href="#a7a48e7e40857fd11fd887c4d958a3fb1">_amplitude</a> = constrain(amp, 0.0f, 1.0f);</div>
+<div class="line"><span class="lineno">  304</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,11 +314,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00272">272</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  272</span>                                          {</div>
-<div class="line"><span class="lineno">  273</span>    <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a> = freq;</div>
-<div class="line"><span class="lineno">  274</span>    <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a> = (2.0f * M_PI * <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>) / <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>;</div>
-<div class="line"><span class="lineno">  275</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00297">297</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                                          {</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a> = freq;</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_variable" href="#aaef01e29e7202e7d303e03431fb978b2">_phaseIncrement</a> = (2.0f * M_PI * <a class="code hl_variable" href="#ad4e6ef3f59e9c6ddc4c7d3f32c7a429d">_frequency</a>) / <a class="code hl_variable" href="#aed4de421e73eb581f8380cd48aa67f65">_sampleRate</a>;</div>
+<div class="line"><span class="lineno">  300</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -345,11 +345,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00281">281</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  281</span>                                     {</div>
-<div class="line"><span class="lineno">  282</span>    <span class="comment">// avoid division by zero or full-cycle peaks</span></div>
-<div class="line"><span class="lineno">  283</span>    <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a> = constrain(skew, 0.01f, 0.99f);</div>
-<div class="line"><span class="lineno">  284</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8cpp_source.html#l00306">306</a> of file <a class="el" href="_c_t_a_g___audio_8cpp_source.html">CTAG_Audio.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>                                     {</div>
+<div class="line"><span class="lineno">  307</span>    <span class="comment">// avoid division by zero or full-cycle peaks</span></div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_variable" href="#ad5b32dfff3825fb2c90de970b63579c8">_skew</a> = constrain(skew, 0.01f, 0.99f);</div>
+<div class="line"><span class="lineno">  309</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -374,7 +374,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00286">286</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00293">293</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +398,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00285">285</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00292">292</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -422,7 +422,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00287">287</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00294">294</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -446,7 +446,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00288">288</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00295">295</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +470,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00284">284</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00291">291</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>
@@ -496,7 +496,7 @@ Private Attributes</h2></td></tr>
 
 <p>Position of the peak in the cycle [0.01…0.99]. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00291">291</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_t_a_g___audio_8h_source.html#l00298">298</a> of file <a class="el" href="_c_t_a_g___audio_8h_source.html">CTAG_Audio.h</a>.</p>
 
 </div>
 </div>

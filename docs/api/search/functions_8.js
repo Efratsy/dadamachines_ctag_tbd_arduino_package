@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['loop_0',['loop',['../_simple_synth_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;SimpleSynth.ino'],['../_button___demo_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;Button_Demo.ino'],['../_display_read_write_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;DisplayReadWrite.ino'],['../_basic_u_i_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;BasicUI.ino'],['../_l_e_d___demo_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;LED_Demo.ino'],['../_s_p_i___i_p_c___master_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;SPI_IPC_Master.ino'],['../_s_p_i___i_p_c___slave_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;SPI_IPC_Slave.ino'],['../_complete___i_o___test_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;Complete_IO_Test.ino'],['../_u_s_b___midi___test_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;USB_Midi_Test.ino']]],
-  ['loop1_1',['loop1',['../_u_s_b___midi___test_8ino.html#a39ceba300a80e348e278539f57e0ca79',1,'USB_Midi_Test.ino']]]
+  ['init_0',['init',['../namespace_c_t_a_g___audio_engine.html#af2959f1ab779145701181311c3431313',1,'CTAG_AudioEngine']]],
+  ['isbuttonlongpressed_1',['isButtonLongPressed',['../class_c_t_a_g___extension_board.html#a28ec687480cc68432fb389ae80447728',1,'CTAG_ExtensionBoard']]],
+  ['isbuttonpressed_2',['isButtonPressed',['../class_c_t_a_g___extension_board.html#ae18af6a1360b5ed4b63e5f69c7d3cc41',1,'CTAG_ExtensionBoard']]],
+  ['isdeviceconnected_3',['isDeviceConnected',['../class_c_t_a_g___u_s_b_m_i_d_i.html#a84f7442fbfe5ca81eccc651ac842b30f',1,'CTAG_USBMIDI']]],
+  ['isencoderpressed_4',['isEncoderPressed',['../class_c_t_a_g___extension_board.html#aeacb6539321efed52677d45c1b8e4c6f',1,'CTAG_ExtensionBoard']]],
+  ['isencoderrotatedbackward_5',['isEncoderRotatedBackward',['../class_c_t_a_g___extension_board.html#aab84128fbd2115b42f0f25ff6104ad58',1,'CTAG_ExtensionBoard']]],
+  ['isencoderrotatedforward_6',['isEncoderRotatedForward',['../class_c_t_a_g___extension_board.html#ae76af48416682747ce41c0a65d03422e',1,'CTAG_ExtensionBoard']]],
+  ['isfbuttonlongpressed_7',['isFButtonLongPressed',['../class_c_t_a_g___extension_board.html#a8bfc0fb8ab3c092c26514091eee61b24',1,'CTAG_ExtensionBoard']]],
+  ['isfbuttonpressed_8',['isFButtonPressed',['../class_c_t_a_g___extension_board.html#a025ad6c80f52574ebe00c8a69b2da9f7',1,'CTAG_ExtensionBoard']]],
+  ['ispressed_9',['isPressed',['../class_c_t_a_g___button.html#a6a2a0302b2ec5602f56a2811961ce9f5',1,'CTAG_Button']]]
 ];

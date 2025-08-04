@@ -9,7 +9,7 @@ var _c_t_a_g___audio_8h =
     [ "CTAG_AUDIO_H", "_c_t_a_g___audio_8h.html#a92913631e78ded7f60b336cb50257d07", null ],
     [ "audioLoop", "_c_t_a_g___audio_8h.html#a20127a12cf4f8a90cde80a39a27c9a13", null ],
     [ "begin", "_c_t_a_g___audio_8h.html#a85654a2eb910948134fedec31ef91e19", null ],
-    [ "init", "_c_t_a_g___audio_8h.html#abbd58aff3726149edab45b7825e2eed4", null ],
+    [ "init", "_c_t_a_g___audio_8h.html#af2959f1ab779145701181311c3431313", null ],
     [ "renderBlock", "_c_t_a_g___audio_8h.html#a5540b2587aa0f11e31b3fceb872a42ec", null ],
     [ "setSource", "_c_t_a_g___audio_8h.html#a1520860faaef776f5a82496f9613b071", null ]
 ];

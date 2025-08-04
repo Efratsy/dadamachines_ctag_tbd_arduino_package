@@ -53,6 +53,13 @@ public:
      */
     void setLineOutVolume(uint8_t volume);
 
+
+        // --- NEUE FUNKTION HINZUFÜGEN ---
+    /**
+     * @brief Configures the codec's ADC for line-in recording.
+     */
+    void enableLineIn();
+
 private:
     void _write_register(uint8_t page, uint8_t reg, uint8_t value);
     void _configure_tlv320aic3254();
@@ -91,7 +98,7 @@ namespace CTAG_AudioEngine {
      * @brief Configure the codec + I²S peripheral.
      * Must be called once before starting the audio loop.
      */
-    void init(i2s_port_t i2s_port = I2S_NUM_0);
+    void init(i2s_port_t i2s_port = I2S_NUM_0, uint32_t sample_rate = 44100);
 
     /**
      * @brief Pick which CTAG_AudioSource to pull samples from.

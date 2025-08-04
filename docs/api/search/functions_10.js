@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7ectag_5faudiosource_0',['~CTAG_AudioSource',['../class_c_t_a_g___audio_source.html#ac45e98a29674fbf2f29016644f73dd4b',1,'CTAG_AudioSource']]],
-  ['_7ectag_5fdisplay_1',['~CTAG_Display',['../class_c_t_a_g___display.html#a659cfbe5ab229d6fc31857d9f2d504db',1,'CTAG_Display']]]
+  ['waslongpressed_0',['wasLongPressed',['../class_c_t_a_g___button.html#a58801ab37c85b9ba950f93077340ed94',1,'CTAG_Button']]],
+  ['wasshortpressed_1',['wasShortPressed',['../class_c_t_a_g___button.html#a18481477059b95048ea2091b864c9b8f',1,'CTAG_Button']]],
+  ['writerow_2',['writeRow',['../class_c_t_a_g___display.html#ab065f95506f4b76d66d67220fe3a1c0d',1,'CTAG_Display']]]
 ];

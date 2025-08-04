@@ -9,7 +9,7 @@
  */
 
 // --- Constants ---
-#define SAMPLE_RATE     (44100)
+// #define SAMPLE_RATE     (44100) OLD FIXED SAMPLERATE
 #define BITS_PER_SAMPLE (I2S_BITS_PER_SAMPLE_16BIT)
 
 
@@ -34,6 +34,31 @@ void CTAG_AudioCodec::_write_register(uint8_t page, uint8_t reg, uint8_t value) 
     Wire.write(reg);   // The register address on the selected page
     Wire.write(value); // The value to be written
     Wire.endTransmission();
+}
+
+
+// in CTAG_Audio.cpp
+
+void CTAG_AudioCodec::enableLineIn() {
+  // --- Configure the signal path for recording ---
+
+  // 1. Route IN2_L (Line1 L) to the Left ADC's Positive Input (IN1L)
+  _write_register(0, 19, 0x04); // Page 0, Reg 19, D[3:0]=0100b
+
+  // 2. Route IN2_R (Line1 R) to the Right ADC's Positive Input (IN1R)
+  _write_register(0, 22, 0x40); // Page 0, Reg 22, D[7:4]=0100b
+
+  // 3. Power up the Left and Right ADCs
+  _write_register(0, 81, 0xC0); // Page 0, Reg 81, D[7:6]=11b
+
+  // 4. Unmute the ADCs and set digital volume to 0dB (max performance)
+  _write_register(0, 82, 0x00); // Page 0, Reg 82
+
+  // --- NEW: Unmute and set the input gain (PGA) ---
+  // We'll add a significant boost, e.g., +20dB, to make the signal clearly audible.
+  // The value 0x28 corresponds to 20dB.
+  _write_register(0, 83, 0x28); // Left ADC PGA Gain = +20dB
+  _write_register(0, 84, 0x28); // Right ADC PGA Gain = +20dB
 }
 
 void CTAG_AudioCodec::_configure_tlv320aic3254() {
@@ -103,13 +128,13 @@ namespace CTAG_AudioEngine {
         }
     }
 
-    void init(i2s_port_t i2s_port) {
+    void init(i2s_port_t i2s_port, uint32_t sample_rate) {
         _i2s_port = i2s_port;
 
         // zero-init + configure
         i2s_config_t cfg{};  
         cfg.mode               = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_TX);
-        cfg.sample_rate        = SAMPLE_RATE;
+        cfg.sample_rate        = sample_rate;
         cfg.bits_per_sample    = BITS_PER_SAMPLE;
         cfg.channel_format     = I2S_CHANNEL_FMT_RIGHT_LEFT;
         cfg.communication_format = I2S_COMM_FORMAT_STAND_I2S;
@@ -128,7 +153,7 @@ namespace CTAG_AudioEngine {
         pin_cfg.data_in_num  = I2S_PIN_NO_CHANGE;
         i2s_set_pin(_i2s_port, &pin_cfg);
 
-        i2s_set_clk(_i2s_port, SAMPLE_RATE, BITS_PER_SAMPLE, I2S_CHANNEL_STEREO);
+        i2s_set_clk(_i2s_port, sample_rate, BITS_PER_SAMPLE, I2S_CHANNEL_STEREO);
     }
 
     void setSource(CTAG_AudioSource* source) {

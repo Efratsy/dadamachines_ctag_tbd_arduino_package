@@ -129,7 +129,7 @@ void loop1() {
 
   for (int i = 0; i < 16; ++i) {
     
-    if (extBoard.isButtonPressed(i)) {
+    if (extBoard.isButtonLongPressed(i)) {
       sequence_pattern ^= (1 << i);
       delay(50); // Simple debounce
     }

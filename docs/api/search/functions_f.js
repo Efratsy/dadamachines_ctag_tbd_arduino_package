@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['waslongpressed_0',['wasLongPressed',['../class_c_t_a_g___button.html#a58801ab37c85b9ba950f93077340ed94',1,'CTAG_Button']]],
-  ['wasshortpressed_1',['wasShortPressed',['../class_c_t_a_g___button.html#a18481477059b95048ea2091b864c9b8f',1,'CTAG_Button']]],
-  ['writerow_2',['writeRow',['../class_c_t_a_g___display.html#ab065f95506f4b76d66d67220fe3a1c0d',1,'CTAG_Display']]]
+  ['update_0',['update',['../class_c_t_a_g___button.html#a6b9e1b9799ca176e9e60e9a907cce736',1,'CTAG_Button::update()'],['../class_c_t_a_g___extension_board.html#ad79c4957e5072d8b9058a7ac0503402e',1,'CTAG_ExtensionBoard::update()']]]
 ];
