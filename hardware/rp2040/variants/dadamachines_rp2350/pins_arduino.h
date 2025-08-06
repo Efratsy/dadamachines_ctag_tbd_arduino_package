@@ -62,7 +62,7 @@ static const uint8_t TX = PIN_SERIAL1_TX;
 static const uint8_t RX = PIN_SERIAL1_RX;
 
 /* ------------------------------------------------------------------------
- *  SPI  – communication with the ESP32-S3
+ *  SPI  – communication with the ESP32-P4
  * ----------------------------------------------------------------------*/
 /**
  * IPC link <b>SPI-0 (HS)</b> – 10 MHz, high-speed path.  
@@ -111,7 +111,7 @@ static const uint8_t RX = PIN_SERIAL1_RX;
 #define PIN_USB_PWR_EN       (10u)  ///< Enables 5 V to USB-A host port
 #define PIN_USB_SEL          (11u)  ///< FSUSB42 MUX select: Host ↔ Device
 #define PIN_FSUSB42MUX_SEL   (11u)  ///< Legacy alias for backward-compatibility
-#define PIN_BOOTSEL_BUTTON   (3u)   ///< BOOT/RESET button routed to RP2040
+#define PIN_BOOTSEL_BUTTON   (3u)   ///< BOOT/RESET button routed to RP2350
 
 /* ------------------------------------------------------------------------
  *  ADC inputs
