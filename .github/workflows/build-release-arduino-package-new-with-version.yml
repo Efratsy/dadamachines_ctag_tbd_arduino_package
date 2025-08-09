@@ -1,25 +1,31 @@
+name: Tag-Version Build & Release CTAG TBD Arduino Package
+
 on:
   push:
     tags:
-      - 'v*.*.*'          # nur semantische Tags
+      - 'v*.*.*'
   workflow_dispatch:
     inputs:
       version:
         description: 'Version ohne v-Präfix (z.B. 1.2.3)'
         required: true
 
+permissions:
+  contents: write
+
 jobs:
   build-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # 1) Tag-Commit für Build/ZIPs
+      - name: Checkout tag commit
+        uses: actions/checkout@v4
 
-      # Version aus Tag oder manueller Eingabe ableiten
       - name: Derive VERSION
         run: |
           if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref_type }}" = "tag" ]; then
-            V="${{ github.ref_name }}"          # z.B. v1.2.3
-            V="${V#v}"                          # -> 1.2.3
+            V="${{ github.ref_name }}"
+            V="${V#v}"
           else
             V="${{ github.event.inputs.version }}"
           fi
@@ -50,16 +56,36 @@ jobs:
           stat -c%s  "esp32-${VERSION}.zip"  > esp32.size
           stat -c%s  "rp2040-${VERSION}.zip" > rp2040.size
 
-      - name: Create package_index.json
+      # 2) Separat main auschecken, dort docs/… bearbeiten
+      - name: Checkout main for docs
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo-main
+
+      - name: Append to docs/package_dadamachines_ctag_tbd_index.json
+        working-directory: repo-main
         run: |
-          python tools/render_index.py \
+          python tools/append_platform.py \
+            --index docs/package_dadamachines_ctag_tbd_index.json \
             --version "${VERSION}" \
-            --esp32-zip "esp32-${VERSION}.zip" --esp32-size $(cat esp32.size) \
-            --esp32-sha $(cat esp32.sha256) \
-            --rp2040-zip "rp2040-${VERSION}.zip" --rp2040-size $(cat rp2040.size) \
-            --rp2040-sha $(cat rp2040.sha256) \
             --base-url "https://github.com/${{ github.repository }}/releases/download/v${VERSION}/" \
-            --out package_index.json
+            --esp32-zip "esp32-${VERSION}.zip" \
+            --esp32-size "$(stat -c%s ../esp32-${VERSION}.zip)" \
+            --esp32-sha "$(sha256sum ../esp32-${VERSION}.zip | awk '{print $1}')" \
+            --rp2040-zip "rp2040-${VERSION}.zip" \
+            --rp2040-size "$(stat -c%s ../rp2040-${VERSION}.zip)" \
+            --rp2040-sha "$(sha256sum ../rp2040-${VERSION}.zip | awk '{print $1}')" \
+            --size-as-string
+
+      - name: Commit updated index to main
+        working-directory: repo-main
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/package_dadamachines_ctag_tbd_index.json
+          git commit -m "index: add ${VERSION}" || echo "No changes"
+          git push
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -69,5 +95,4 @@ jobs:
           files: |
             esp32-${{ env.VERSION }}.zip
             rp2040-${{ env.VERSION }}.zip
-            package_index.json
           generate_release_notes: true
