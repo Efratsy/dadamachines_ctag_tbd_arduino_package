@@ -34,20 +34,40 @@ jobs:
 
       - name: Copy cores and libraries
         run: |
-          rm -rf build && mkdir -p build/esp32 build/rp2040
-          cp -r hardware/esp32   build/esp32
-          cp -r hardware/rp2040  build/rp2040
+          rm -rf build esp32 rp2040
+          mkdir -p build/esp32 build/rp2040
+          # nur Inhalte kopieren, nicht den Ordner selbst
+          cp -r hardware/esp32/*  build/esp32/
+          cp -r hardware/rp2040/* build/rp2040/
           mkdir -p build/esp32/libraries build/rp2040/libraries
           cp -r libraries/* build/esp32/libraries/
           cp -r libraries/* build/rp2040/libraries/
-
-      - name: Package cores
+      
+      - name: Package cores (same layout as the old flow)
         run: |
-          mkdir -p "esp32/${VERSION}" "rp2040/${VERSION}"
-          mv build/esp32/*   "esp32/${VERSION}/"
-          mv build/rp2040/*  "rp2040/${VERSION}/"
-          zip -r "esp32-${VERSION}.zip" esp32
-          zip -r "rp2040-${VERSION}.zip" rp2040
+          cd build
+      
+          mv esp32 esp32_tmp
+          mkdir -p "esp32/${VERSION}"
+          mv esp32_tmp/* "esp32/${VERSION}/"
+      
+          mv rp2040 rp2040_tmp
+          mkdir -p "rp2040/${VERSION}"
+          mv rp2040_tmp/* "rp2040/${VERSION}/"
+      
+          # Zips wie früher: Top-Level im Zip ist NUR die Versionsmappe
+          cd esp32
+          zip -r ../esp32-${VERSION}.zip .
+          cd ..
+      
+          cd rp2040
+          zip -r ../rp2040-${VERSION}.zip .
+          cd ..
+      
+          # Zips ins Working-Dir des Jobs legen
+          mv esp32-${VERSION}.zip ../
+          mv rp2040-${VERSION}.zip ../
+
 
       - name: Hash & size
         run: |
@@ -86,6 +106,25 @@ jobs:
           git add docs/package_dadamachines_ctag_tbd_index.json
           git commit -m "index: add ${VERSION}" || echo "No changes"
           git push
+
+      - name: Remove old assets from this release (keep only current zips)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.VERSION }}
+        run: |
+          rid=$(gh api repos/${{ github.repository }}/releases/tags/v${VERSION} --jq '.id')
+          gh api repos/${{ github.repository }}/releases/$rid/assets --jq '.[].id' | while read id; do
+            name=$(gh api repos/${{ github.repository }}/releases/assets/$id --jq '.name')
+            case "$name" in
+              "esp32-${VERSION}.zip"|"rp2040-${VERSION}.zip"|"Source code (zip)"|"Source code (tar.gz)")
+                echo "keep $name"
+                ;;
+              *)
+                echo "delete $name"
+                gh api -X DELETE repos/${{ github.repository }}/releases/assets/$id
+                ;;
+            esac
+          done
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
