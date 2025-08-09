@@ -113,6 +113,15 @@ jobs:
           git commit -m "index: add ${VERSION}" || echo "No changes"
           git push
 
+      - name: Commit updated API docs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/api
+          git commit -m "Update API documentation for v${VERSION}" || echo "No changes"
+          git push
+
+
       - name: Remove old assets from this release (keep only current zips)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
