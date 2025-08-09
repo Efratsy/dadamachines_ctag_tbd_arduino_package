@@ -54,7 +54,6 @@ void CTAG_AudioCodec::enableLineIn() {
   // 4. Unmute the ADCs and set digital volume to 0dB (max performance)
   _write_register(0, 82, 0x00); // Page 0, Reg 82
 
-  // --- NEW: Unmute and set the input gain (PGA) ---
   // We'll add a significant boost, e.g., +20dB, to make the signal clearly audible.
   // The value 0x28 corresponds to 20dB.
   _write_register(0, 83, 0x28); // Left ADC PGA Gain = +20dB
@@ -332,8 +331,6 @@ int16_t CTAG_VCO_Saw::getNextSample() {
     // Convert to 16-bit
     return (int16_t)(out * 32767.0f);
 }
-
-
 
 
 // --- CTAG_FMSynth ---

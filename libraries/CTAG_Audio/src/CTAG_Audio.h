@@ -53,8 +53,6 @@ public:
      */
     void setLineOutVolume(uint8_t volume);
 
-
-        // --- NEUE FUNKTION HINZUFÜGEN ---
     /**
      * @brief Configures the codec's ADC for line-in recording.
      */
