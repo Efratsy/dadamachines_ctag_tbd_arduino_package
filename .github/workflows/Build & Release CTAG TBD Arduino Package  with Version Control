@@ -1,0 +1,73 @@
+on:
+  push:
+    tags:
+      - 'v*.*.*'          # nur semantische Tags
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version ohne v-Präfix (z.B. 1.2.3)'
+        required: true
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Version aus Tag oder manueller Eingabe ableiten
+      - name: Derive VERSION
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref_type }}" = "tag" ]; then
+            V="${{ github.ref_name }}"          # z.B. v1.2.3
+            V="${V#v}"                          # -> 1.2.3
+          else
+            V="${{ github.event.inputs.version }}"
+          fi
+          echo "VERSION=$V" >> $GITHUB_ENV
+          echo "Version: $V"
+
+      - name: Copy cores and libraries
+        run: |
+          rm -rf build && mkdir -p build/esp32 build/rp2040
+          cp -r hardware/esp32   build/esp32
+          cp -r hardware/rp2040  build/rp2040
+          mkdir -p build/esp32/libraries build/rp2040/libraries
+          cp -r libraries/* build/esp32/libraries/
+          cp -r libraries/* build/rp2040/libraries/
+
+      - name: Package cores
+        run: |
+          mkdir -p "esp32/${VERSION}" "rp2040/${VERSION}"
+          mv build/esp32/*   "esp32/${VERSION}/"
+          mv build/rp2040/*  "rp2040/${VERSION}/"
+          zip -r "esp32-${VERSION}.zip" esp32
+          zip -r "rp2040-${VERSION}.zip" rp2040
+
+      - name: Hash & size
+        run: |
+          sha256sum "esp32-${VERSION}.zip"  | awk '{print $1}' > esp32.sha256
+          sha256sum "rp2040-${VERSION}.zip" | awk '{print $1}' > rp2040.sha256
+          stat -c%s  "esp32-${VERSION}.zip"  > esp32.size
+          stat -c%s  "rp2040-${VERSION}.zip" > rp2040.size
+
+      - name: Create package_index.json
+        run: |
+          python tools/render_index.py \
+            --version "${VERSION}" \
+            --esp32-zip "esp32-${VERSION}.zip" --esp32-size $(cat esp32.size) \
+            --esp32-sha $(cat esp32.sha256) \
+            --rp2040-zip "rp2040-${VERSION}.zip" --rp2040-size $(cat rp2040.size) \
+            --rp2040-sha $(cat rp2040.sha256) \
+            --base-url "https://github.com/${{ github.repository }}/releases/download/v${VERSION}/" \
+            --out package_index.json
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: v${{ env.VERSION }}
+          files: |
+            esp32-${{ env.VERSION }}.zip
+            rp2040-${{ env.VERSION }}.zip
+            package_index.json
+          generate_release_notes: true
