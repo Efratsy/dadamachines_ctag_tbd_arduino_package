@@ -32,6 +32,12 @@ jobs:
           echo "VERSION=$V" >> $GITHUB_ENV
           echo "Version: $V"
 
+      - name: Generate documentation with Doxygen
+        run: |
+          sudo apt-get update && sudo apt-get install -y doxygen graphviz
+          cd tools
+          doxygen Doxyfile
+
       - name: Copy cores and libraries
         run: |
           rm -rf build esp32 rp2040
